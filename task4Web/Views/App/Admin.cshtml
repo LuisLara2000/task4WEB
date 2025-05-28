@@ -1,0 +1,63 @@
+﻿@model IEnumerable<UsersModels>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla con 5 columnas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/task4Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="appTitle">
+        <h1>TASK 4 APP</h1>
+    </div>
+    <div class="toolbarContainer">
+        <label class="toolbarTitle">Toolbar</label>
+        <div class="toolbar">
+
+            <button onclick="deleteUsers()"><img src="~/trash.png" title="delete users" />   </button>
+            <button onclick="blockUsers()"><img src="~/block.png" title="block users" /></button>
+            <button onclick="unblockUsers()"><img src="~/unblock.png" title="unblock users" /></button>
+            <form asp-action="GoBack" method="post">
+                <button> <img src="~/return.png" title="Return" /></button>
+            </form>
+
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead >
+                <tr>
+                    <th class="bg-dark text-white"><input type="checkbox" onchange="unselectSelectAll(this)" class="seleccionarLider"></th>
+                    <th id="col-id"  class="bg-dark text-white">@Html.DisplayNameFor(model => model.id)</th>
+                    <th class="bg-dark text-white">@Html.DisplayNameFor(model => model.userName)</th>
+                    <th class="bg-dark text-white">@Html.DisplayNameFor(model => model.email)L</th>
+                    <th class="bg-dark text-white">@Html.DisplayNameFor(model => model.lastDate)</th>
+                    <th id="col-lasthour" class="bg-dark text-white">@Html.DisplayNameFor(model => model.lastHour)</th>
+                    <th class="bg-dark text-white">Blocked</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> <input type="checkbox" class="seleccionar"></td>
+                        <td id="col-id"> @Html.DisplayFor(modelItem => item.id)</td>
+                        <td> @Html.DisplayFor(modelItem => item.userName)</td>
+                        <td> @Html.DisplayFor(modelItem => item.email)</td>
+                        <td> @Html.DisplayFor(modelItem => item.lastDate)</td>
+                        <td id="col-lasthour"> @Html.DisplayFor(modelItem => item.lastHour)</td>
+                        <td> @Html.DisplayFor(modelItem => item.userState)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model UsersLogInModel
+@{
+    ViewData["Title"] = "";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/LogIn.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/task4Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="con">
+        <div class="card">
+            <h1>THE TASK 4</h1>
+            <h3>- LOG IN - </h3>
+            <label></label>
+            <form asp-action="VerifyPassword" method="post">
+                <div class="form-group">
+                    <label for="email">E-mail <span asp-validation-for="email" class="text-danger"></span></label>
+                    <input asp-for="email" class="form-control"  type="email" placeholder="Enter your email">
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password  <span asp-validation-for="password" class="text-danger"></span></label>
+                    <input asp-for="password" class="form-control" type="password" id="password" placeholder="Enter your password">
+                   
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success w-100">
+                        Log In!
+                    </button>
+                </div>
+            </form>
+            <div class="login-text">
+                <a asp-controller="App" asp-action="CreateAccount">You dont have an account? get a account</a>
+            </div>
+        </div>
+
+    </div>
+</body>

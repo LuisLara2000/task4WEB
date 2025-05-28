@@ -1,0 +1,66 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+.con {
+    height: 95vh;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+   
+.card {
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+    .card h2 {
+        margin-bottom: 40px;
+        text-align:center;
+    }
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+    .login-text a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
