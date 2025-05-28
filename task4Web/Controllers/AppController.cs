@@ -58,8 +58,8 @@ namespace task4Web.Controllers
                 user.hashPassword = encryptPassword(user.hashPassword);
                 var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync("api/Users/CreateUser", content);
-                if (response.IsSuccessStatusCode)            
-                    return View("Admin", await listUsers());
+                if (response.IsSuccessStatusCode)
+                    return View("LogIn");
                 ModelState.AddModelError("Email", "[This email already exist]");
             }
             return View("CreateAccount");
